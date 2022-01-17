@@ -120,13 +120,9 @@ void setup()
     modem.simUnlock(simPIN);
   }
  
-  // Configure the wake up source as timer wake up  
-  esp_sleep_enable_timer_wakeup(TIME_TO_SLEEP * uS_TO_S_FACTOR);
- 
   Wire.begin(18,19);
  
   setupAirQualitySensor();
-  //connectToWifi();
  
   setupBMPSensor();
 }
