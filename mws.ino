@@ -151,13 +151,13 @@ void readTempAndHumiditySensor(){
     Serial.print("OK"); 
     break;
     case DHTLIB_ERROR_CHECKSUM: 
-    Serial.println("Błąd sumy kontrolnej"); 
+    Serial.println("Control sum error"); 
     break;
     case DHTLIB_ERROR_TIMEOUT: 
-    Serial.println("Koniec czasu oczekiwania - brak odpowiedzi"); 
+    Serial.println("Timeout - no reply from sensor"); 
     break;
     default: 
-    Serial.println("Nieznany błąd"); 
+    Serial.println("Unknown error"); 
     break;
   }
 }
