@@ -125,6 +125,8 @@ void setup()
   setupAirQualitySensor();
  
   setupBMPSensor();
+ 
+  esp_sleep_enable_timer_wakeup(INTERVAL);
 }
  
 void setupBMPSensor() {
@@ -256,5 +258,5 @@ void loop()
 {
   readTempAndHumiditySensor();
   sendMeasurementsToServerViaGSM();
-  delay(INTERVAL);  
+  esp_deep_sleep_start();
 }
